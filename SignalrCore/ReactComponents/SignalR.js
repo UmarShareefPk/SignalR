@@ -2,14 +2,15 @@ import {React , useState, useEffect} from 'react'
 import {  JsonHubProtocol,
     HubConnectionState,
     HubConnectionBuilder,
-    LogLevel} from '@microsoft/signalr';
+    LogLevel
+} from '@microsoft/signalr';  /*npm i --save @microsoft/signalr */
 
 export default function SignalR() {
 
     const [ connection, setConnection ] = useState(null);
     const [msg, setMsg] = useState("");
     const [allMessages, setAllMessages] = useState([]);
-    const [fakeid, setFakeid] = useState(0);
+
 
     useEffect(() => {
         const newConnection = new HubConnectionBuilder()
